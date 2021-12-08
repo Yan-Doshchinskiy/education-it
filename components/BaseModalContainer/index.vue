@@ -10,41 +10,31 @@
   </transition>
 </template>
 <script lang="ts">
-import { mapGetters } from 'vuex'
-import MainVue from '~/mixins/MainVue'
-
-import modals from '~/store/modals/modals'
-
-import BaseModalStatus from '~/components/Modals/BaseModalStatus/index.vue'
-import BaseModalDefault from '~/components/Modals/BaseModalDefault/index.vue'
+import { mapGetters } from 'vuex';
+import MainVue from '~/mixins/MainVue';
+import BaseModalDefault from '~/components/Modals/BaseModalDefault/index.vue';
+import { Modals } from '~/store/modals/consts';
 
 export default MainVue.extend({
   name: 'BaseModalContainer',
   components: {
-    'base-modal-status': BaseModalStatus,
-    'base-modal-default': BaseModalDefault
+    [Modals.DEFAULT]: BaseModalDefault,
   },
-  data: () => ({
-    modals
-  }),
   computed: {
     ...mapGetters({
       isShow: 'modals/getIsShow',
       currentModalKey: 'modals/getCurrentModalKey',
-      options: 'modals/getOptions'
-    })
+      options: 'modals/getOptions',
+    }),
   },
   methods: {
-    backgroundClick () {
+    backgroundClick() {
       if (!this.options.isUnclosable) {
-        this.close()
+        this.CloseModal();
       }
     },
-    close () {
-      this.$store.dispatch('modals/hide')
-    }
-  }
-})
+  },
+});
 </script>
 <style lang="scss" scoped>
 .base-modal {

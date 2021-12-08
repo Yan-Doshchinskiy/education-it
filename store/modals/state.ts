@@ -1,9 +1,8 @@
 export interface IModalOptions {
-  key: string; // название компонента модалки, берется из modals.ts
-  title?: string; // если название у модалки предпологается менять
-  text?: string, // если текст у модалки предпологается менять
-  isUnclosable?: boolean, // если true то модалка не будет закрываться при клике на бэкграунд
-  status?: string, // для модалки статуса (success, error и тд)
+  key?: string;
+  title?: string;
+  text?: string,
+  isUnclosable?: boolean,
 }
 
 export interface IModalsState {
@@ -15,9 +14,7 @@ export interface IModalsState {
 export const initState = (): IModalsState => ({
   isShow: false,
   currentModalKey: '',
-  options: {
-    key: ''
-  }
-})
+  options: {},
+});
 
-export default initState
+export default initState;

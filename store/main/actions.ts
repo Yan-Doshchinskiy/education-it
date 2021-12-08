@@ -1,16 +1,30 @@
-import type { ActionTree } from 'vuex'
+import type { ActionTree } from 'vuex';
 
 const actions: ActionTree<null, null> = {
-  showToast (_, value: {title: string, text: string, variant: string, append: boolean, position: string, delay: number}) {
+  showToast(_, {
+    title = 'Error',
+    text = 'Something went wrong',
+    variant = 'danger',
+    append = false,
+    position = 'b-toaster-bottom-right',
+    delay = 5000,
+  }: {
+    title: string,
+    text: string,
+    variant: string,
+    append: boolean,
+    position: string,
+    delay: number
+  }) {
     // @ts-ignore
-    this._vm.$bvToast.toast(value.text, {
-      title: value.title || 'Error',
-      variant: value.variant || 'danger',
+    this._vm.$bvToast.toast(text, {
+      title: title || 'Error',
+      variant,
       solid: true,
-      toaster: value.position || 'b-toaster-bottom-right',
-      appendToast: value.append || false,
-      autoHideDelay: value.delay || 5000
-    })
-  }
-}
-export default actions
+      toaster: position,
+      appendToast: append,
+      autoHideDelay: delay,
+    });
+  },
+};
+export default actions;

@@ -1,18 +1,15 @@
-import type { ActionTree } from 'vuex'
-import { ILoaderState } from '~/store/loader/state'
+import { ActionTree, Commit } from 'vuex';
+import { ILoaderState } from './state';
+import LoaderMutations from './consts';
 
-const actions: ActionTree<ILoaderState, ILoaderState> = {
-  setLoading ({ commit }, payload: boolean) {
-    commit('SET_IS_LOADING', payload)
-    commit('SET_STATUS_TEXT', '')
-    commit('SET_IS_BG_HIDER', false)
-  },
-  setIsBgHider ({ commit }, payload: boolean) {
-    commit('SET_IS_BG_HIDER', payload)
-  },
-  setStatusText ({ commit }, payload: string) {
-    commit('SET_STATUS_TEXT', payload)
-  }
+export interface ILoaderActions<C = Commit> {
+  setLoading({ commit }: { commit: C }, payload: boolean): void,
 }
 
-export default actions
+const actions: ActionTree<ILoaderState, ILoaderState> & ILoaderActions = {
+  setLoading({ commit }, payload) {
+    commit(LoaderMutations.SET_IS_LOADING, payload);
+  },
+};
+
+export default actions;

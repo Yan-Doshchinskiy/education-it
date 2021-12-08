@@ -1,93 +1,92 @@
 // @ts-nocheck
 
-import localeRu from './locales/ru.json'
+import localeRu from './locales/ru.json';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-require('dotenv').config()
+require('dotenv').config();
 
 export default {
-  ssr: false,
+  ssr: true,
   head: {
-    title: 'frontend-starter-kit-2',
+    title: 'Education',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ru',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
     ],
     link: [
       // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap' },
+    ],
   },
   css: [
-    '@/assets/scss/main.scss'
+    '@/assets/scss/main.scss',
   ],
   styleResources: {
-    scss: ['./assets/scss/resourses.scss']
+    scss: ['./assets/scss/resourses.scss'],
   },
   components: true,
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
   modules: [
     '@nuxtjs/style-resources',
     'bootstrap-vue/nuxt',
     'nuxt-i18n',
     '@nuxtjs/axios',
-    'nuxt-healthcheck'
+    'nuxt-healthcheck',
   ],
   plugins: [
     { src: '@plugins/vee-validate.ts' },
     { src: '@plugins/axios.js' },
-    { src: '@plugins/injectComponents.js' }
+    { src: '@plugins/injectComponents.js' },
   ],
   build: {
     transpile: [
-      'vee-validate/dist/rules'
+      'vee-validate/dist/rules',
     ],
     babel: {
       plugins: [
-        ['@babel/plugin-proposal-private-property-in-object', { loose: true }]
-      ]
+        ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
+      ],
     },
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-    extend (config) {
+    extend(config) {
       config.node = {
-        fs: 'empty'
-      }
-    }
+        fs: 'empty',
+      };
+    },
   },
   axios: {
-    baseURL: process.env.BASE_URL
+    baseURL: process.env.BASE_URL,
   },
   i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
+    locales: ['ru'],
+    defaultLocale: 'ru',
     strategy: 'no_prefix',
     vueI18n: {
       messages: {
-        en: localeRu
-      }
+        ru: localeRu,
+      },
     },
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
-      alwaysRedirect: true
-    }
+      alwaysRedirect: true,
+    },
   },
   healthcheck: {
     path: '/healthcheck',
     contentType: 'application/json',
     // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-    healthy: () => {
-      return JSON.stringify({ status: 'UP' })
-    }
+    healthy: () => JSON.stringify({ status: 'UP' }),
   },
   env: {
-    baseUrl: process.env.BASE_URL
-  }
-}
+    baseUrl: process.env.BASE_URL,
+  },
+};

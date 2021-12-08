@@ -1,10 +1,20 @@
-import type { GetterTree } from 'vuex'
-import { IModalOptions, IModalsState } from '~/store/modals/state'
+import { GetterTree } from 'vuex';
+import { IModalOptions, IModalsState } from '~/store/modals/state';
 
-const getters: GetterTree<IModalsState, IModalsState> = {
-  getIsShow: (state): boolean => state.isShow,
-  getCurrentModalKey: (state): string => state.currentModalKey,
-  getOptions: (state): IModalOptions => state.options
+export interface IModalGetters<S = IModalsState> {
+  getIsShow(state: S): boolean,
+  getCurrentModalKey(state: S): string,
+  getOptions(state: S): IModalOptions,
 }
 
-export default getters
+export type ModalGetterReturnTypes = {
+  [F in keyof IModalGetters]: ReturnType<(IModalGetters[F])>
+}
+
+const getters: GetterTree<IModalsState, IModalsState> & IModalGetters = {
+  getIsShow: (state) => state.isShow,
+  getCurrentModalKey: (state) => state.currentModalKey,
+  getOptions: (state) => state.options,
+};
+
+export default getters;

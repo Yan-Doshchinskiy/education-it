@@ -1,13 +1,19 @@
-import Vue from 'vue'
-import { IModalOptions } from '~/store/modals/state'
+import Vue from 'vue';
+import { mapActions } from 'vuex';
+import { Modals } from '~/store/modals/consts';
 
 export default Vue.extend({
+  data() {
+    return {
+      Modals,
+    };
+  },
   methods: {
-    ShowModal (payload: IModalOptions) {
-      this.$store.dispatch('modals/show', payload)
-    },
-    SetLoader (value: boolean) {
-      this.$store.dispatch('loader/setLoading', value)
-    }
-  }
-})
+    ...mapActions({
+      ShowModal: 'modals/showModal',
+      CloseModal: 'modals/closeModal',
+      SetLoader: 'loader/setLoading',
+      ShowToast: 'main/showToast',
+    }),
+  },
+});
