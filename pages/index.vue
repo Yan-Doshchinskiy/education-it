@@ -1,21 +1,22 @@
 <template>
-  <div class="example">
-    123
+  <div class="landing">
+    <banner />
   </div>
 </template>
 
 <script lang="ts">
-import MainVue from '~/mixins/MainVue'
+import MainVue from '~/mixins/MainVue';
+import Banner from '~/components/Banner';
 
 export default MainVue.extend({
-  data: () => ({
-    test: ''
-  })
-})
+  name: 'LandingPage',
+  components: { Banner },
+});
 </script>
 
 <style lang="scss" scoped>
-.example {
-  @include container;
+.landing {
+  height: max-content;
+  position: relative;
 }
 </style>

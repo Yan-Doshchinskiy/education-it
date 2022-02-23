@@ -1,0 +1,31 @@
+@mixin textTranslateTop {
+  animation-name: translate-text-top;
+  animation-duration: 1s;
+}
+
+@mixin textTranslateBot {
+  animation-name: translate-text-bot;
+  animation-duration: 1s;
+}
+
+@keyframes translate-text-top {
+  from {
+    transform: translateY(-200px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes translate-text-bot {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+

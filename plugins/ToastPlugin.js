@@ -1,4 +1,4 @@
-import Vue from 'vue'
-import { ToastPlugin } from 'bootstrap-vue'
+import Vue from 'vue';
+import { ToastPlugin } from 'bootstrap-vue';
 
-Vue.use(ToastPlugin)
+Vue.use(ToastPlugin);

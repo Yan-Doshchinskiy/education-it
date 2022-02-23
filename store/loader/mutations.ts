@@ -1,10 +1,13 @@
-import type { MutationTree } from 'vuex'
-import { ILoaderState } from '~/store/loader/state'
+import { MutationTree } from 'vuex';
+import { ILoaderState } from './state';
+import LoaderMutations from './consts';
 
-const mutations: MutationTree<ILoaderState> = {
-  SET_IS_LOADING: (state, payload: boolean) => (state.isLoading = payload),
-  SET_STATUS_TEXT: (state, payload: string) => (state.loaderStatusText = payload),
-  SET_IS_BG_HIDER: (state, payload: boolean) => (state.isBgHider = payload)
+export interface ILoaderMutations<S = ILoaderState> {
+  [LoaderMutations.SET_IS_LOADING](state: S, payload: boolean): void,
 }
 
-export default mutations
+const mutations: MutationTree<ILoaderState> & ILoaderMutations = {
+  [LoaderMutations.SET_IS_LOADING]: (state, payload) => { state.isLoading = payload; },
+};
+
+export default mutations;

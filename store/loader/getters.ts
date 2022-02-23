@@ -1,8 +1,16 @@
-import type { GetterTree } from 'vuex'
-import { ILoaderState } from '~/store/loader/state'
+import { GetterTree } from 'vuex';
+import { ILoaderState } from '~/store/loader/state';
 
-const getters: GetterTree<ILoaderState, ILoaderState> = {
-  getIsLoading: (state): boolean => state.isLoading
+export interface ILoaderGetters<S = ILoaderState> {
+  getIsLoading(state: S): boolean,
 }
 
-export default getters
+export type LoaderGetterReturnTypes = {
+  [F in keyof ILoaderGetters]: ReturnType<(ILoaderGetters[F])>
+}
+
+const getters: GetterTree<ILoaderState, ILoaderState> & ILoaderGetters = {
+  getIsLoading: (state) => state.isLoading,
+};
+
+export default getters;
