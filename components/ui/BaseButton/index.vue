@@ -55,7 +55,7 @@ export default MainVue.extend({
   font-size: 14px;
   line-height: 16px;
   border-radius: 50px;
-  transition: $transition-header;
+  transition: $transition-main;
   &_primary {
 
   }
