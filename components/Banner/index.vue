@@ -10,13 +10,13 @@
     <div class="banner__head">
       <div class="banner__top">
         <img class="banner__logo" alt="logo" src="~/assets/img/circle-logo.png">
-        <h1 class="banner__title">
+        <h1 class="banner__title banner__title_h1">
           {{ $t('landing.title') }}
         </h1>
       </div>
-      <div class="banner__text">
+      <h3 class="banner__subtitle banner__subtitle_h3">
         {{ $t('landing.subTitle') }}
-      </div>
+      </h3>
     </div>
   </div>
 </template>
@@ -69,19 +69,12 @@ export default MainVue.extend({
   }
 
   &__title {
-    @include textTranslateBot;
-    color: $white;
-    font-size: 60px;
-    line-height: 60px;
-    font-weight: 600;
-    text-transform: uppercase;
+    @include title;
   }
 
-  &__text {
-    display: flex;
+  &__subtitle {
+    @include title;
     color: $yellow-main;
-    font-size: 19px;
-    font-weight: 500;
     padding-left: 10px;
   }
 }
