@@ -26,5 +26,15 @@
     "required": "The {_field_} is required",
     "size": "The {_field_} field size must be less than {size}KB",
     "decimal": "The {_field_} field must contain only decimal values"
+  },
+  "header": {
+    "courses": "Курсы",
+    "about": "О нас",
+    "account": "Личный кабинет"
+  },
+  "landing": {
+    "title": "Simulating Cyber Threats",
+    "subTitle": "TRAINING TODAY’S LEADERS FOR TOMORROW’S THREATS"
   }
+
 }

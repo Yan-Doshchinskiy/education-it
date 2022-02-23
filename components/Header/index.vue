@@ -2,42 +2,45 @@
   <header class="header">
     <img alt="logo" src="~/assets/img/logo.png" class="header__logo">
     <nav class="header__panel">
-      <nuxt-link
+      <base-button
         v-for="tab in tabs"
         :key="tab.id"
-        :to="tab.link"
+        :link="tab.link"
         class="header__tab"
+        mode="link"
       >
         {{ tab.label }}
-      </nuxt-link>
+      </base-button>
     </nav>
   </header>
 </template>
 
 <script lang="ts">
 import MainVue from '../../mixins/MainVue';
+import BaseButton from '~/components/ui/BaseButton/index.vue';
+import PATH from '~/types/types';
 
 export default MainVue.extend({
   name: 'header-element',
+  components: { BaseButton },
   data() {
     return {
       tabs: [
         {
           id: 0,
-          link: '/',
-          label: 'Курсы',
+          link: PATH.ROOT,
+          label: this.$t('header.courses'),
         },
         {
           id: 1,
-          link: '/44',
-          label: 'О нас',
+          link: PATH.ABOUT,
+          label: this.$t('header.about'),
         },
         {
           id: 2,
-          link: '/123',
-          label: 'Личный кабинет',
+          link: PATH.ACCOUNT,
+          label: this.$t('header.account'),
         },
-
       ],
     };
   },
@@ -46,52 +49,31 @@ export default MainVue.extend({
 
 <style lang="scss" scoped>
 .header {
+  @include container;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 1000;
   height: 80px;
   padding: 20px 40px 20px 20px;
   &__logo {
     margin-top: 7px;
-    width: 264px;
     height: 54px;
   }
   &__panel {
     height: 40px;
     display: flex;
+    flex-grow: 1;
     align-items: center;
+    justify-content: center;
   }
   &__tab {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    padding: 0 18px;
-    background-color: transparent;
-    color: $white;
-    font-family: $header-font;
-    font-size: 14px;
-    line-height: 16px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: $transition-header;
     margin-right: 20px;
     &:last-child {
       margin-right: 0;
     }
-    &:hover {
-      background-color: $yellow-main;
-      color: $black;
-    }
-    &:active {
-      background-color: $yellow-active;
-      color: $black;
-    }
   }
-
 }
 </style>
