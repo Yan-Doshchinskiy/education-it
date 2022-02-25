@@ -48,5 +48,14 @@
       "option5": "Option title 5",
       "option6": "Option title 6"
     }
+  },
+  "courses": {
+    "title": "COURSES AND TRAININGS",
+    "empty": " На данный момент нет активных курсов",
+    "info": {
+      "hours": "hours",
+      "classes": "classes"
+    },
+    "learn-more": "Learn more"
   }
 }

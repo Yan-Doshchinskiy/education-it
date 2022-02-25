@@ -106,7 +106,7 @@ export default MainVue.extend({
     transition: $transition_main;
     -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
-    box-shadow: 4px 4px 14px 4px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 14px 4px rgba(0, 0, 0, 0.3);
   }
 
   &__circle {
@@ -115,8 +115,8 @@ export default MainVue.extend({
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
     border-radius: 50%;
+    background-color: black;
     transition: $transition-main;
     margin-bottom: 25px;
   }

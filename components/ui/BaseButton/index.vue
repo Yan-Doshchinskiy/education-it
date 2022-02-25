@@ -18,6 +18,11 @@
 import MainVue from '~/mixins/MainVue';
 import { COMPUTED_STYLE } from '~/types/types';
 
+enum ButtonMode {
+  LINK = 'link',
+  PRIMARY = 'primary'
+}
+
 export default MainVue.extend({
   name: 'base-button',
   props: {
@@ -27,7 +32,7 @@ export default MainVue.extend({
     },
     mode: {
       type: String,
-      default: 'primary',
+      default: ButtonMode.PRIMARY,
     },
   },
   data() {
@@ -39,7 +44,8 @@ export default MainVue.extend({
     getButtonStyle():COMPUTED_STYLE {
       return [
         'base-button',
-        { 'base-button_link': this.mode === 'link' },
+        { 'base-button_link': this.mode === ButtonMode.LINK },
+        { 'base-button_primary': this.mode === ButtonMode.PRIMARY },
       ];
     },
   },
@@ -50,14 +56,23 @@ export default MainVue.extend({
 .base-button {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 40px;
   padding: 0 18px;
   font-size: 14px;
   line-height: 16px;
   border-radius: 50px;
   transition: $transition-main;
+  font-family: $main-font;
   &_primary {
-
+    background-color: $yellow-main;
+    color: $black;
+    &:hover {
+      background-color: $yellow-secondary;
+    }
+    &:active {
+      background-color: $yellow-active;
+    }
   }
   &_link {
     background-color: transparent;
