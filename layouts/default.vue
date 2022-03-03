@@ -52,5 +52,6 @@ export default MainVue.extend({
   position: relative;
   height: 100vh;
   overflow-y: auto;
+    background-color: $main-bg;
 }
 </style>
