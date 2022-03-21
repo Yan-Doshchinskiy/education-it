@@ -2,9 +2,6 @@
 
 import localeRu from './locales/ru.json';
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-require('dotenv').config();
-
 export default {
   ssr: true,
   target: 'server',
@@ -34,24 +31,16 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
-    '@nuxtjs/dotenv',
+    'bootstrap-vue/nuxt',
   ],
   modules: [
     '@nuxtjs/style-resources',
-    'bootstrap-vue/nuxt',
     'nuxt-i18n',
-    '@nuxtjs/axios',
-    'nuxt-healthcheck',
   ],
   plugins: [
-    { src: '@plugins/vee-validate.ts' },
-    { src: '@plugins/axios.js' },
     { src: '@plugins/injectComponents.js' },
   ],
   build: {
-    transpile: [
-      'vee-validate/dist/rules',
-    ],
     babel: {
       plugins: [
         ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
@@ -63,9 +52,6 @@ export default {
         fs: 'empty',
       };
     },
-  },
-  axios: {
-    baseURL: process.env.BASE_URL,
   },
   i18n: {
     locales: ['ru'],
@@ -81,14 +67,5 @@ export default {
       cookieKey: 'i18n_redirected',
       alwaysRedirect: true,
     },
-  },
-  healthcheck: {
-    path: '/healthcheck',
-    contentType: 'application/json',
-    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-    healthy: () => JSON.stringify({ status: 'UP' }),
-  },
-  env: {
-    baseUrl: process.env.BASE_URL,
   },
 };
