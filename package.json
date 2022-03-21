@@ -10,10 +10,10 @@
     "lint": "eslint --fix --ext .js,.vue,.ts --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@nuxtjs/vercel-builder": "^0.22.1",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/vercel-builder": "^0.22.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
     "babel-plugin-transform-runtime": "^6.23.0",

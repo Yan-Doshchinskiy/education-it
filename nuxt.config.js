@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import localeRu from './locales/ru.json';
+import localeRu from '@/locales/ru.json';
 
 export default {
   ssr: true,
