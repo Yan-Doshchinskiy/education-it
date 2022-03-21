@@ -52,7 +52,7 @@ export default MainVue.extend({
     left: 47.3%;
     display: flex;
     flex-direction: column;
-    z-index: 1000;
+    z-index: 10;
   }
 
   &__top {

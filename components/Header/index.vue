@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header :class="headerStyle">
     <img alt="logo" src="~/assets/img/logo.png" class="header__logo">
     <nav class="header__panel">
       <base-button
@@ -18,11 +18,27 @@
 <script lang="ts">
 import MainVue from '../../mixins/MainVue';
 import BaseButton from '~/components/ui/BaseButton/index.vue';
-import PATH from '~/types/types';
+import PATH, { COMPUTED_STYLE } from '~/types/types';
 
 export default MainVue.extend({
   name: 'header-element',
   components: { BaseButton },
+  props: {
+    isTransparent: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  computed: {
+    headerStyle(): COMPUTED_STYLE {
+      return [
+        'header',
+        {
+          header_background: !this.isTransparent,
+        },
+      ];
+    },
+  },
   data() {
     return {
       tabs: [
@@ -55,13 +71,20 @@ export default MainVue.extend({
   align-items: center;
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 20;
   height: 80px;
   padding: 20px 40px 20px 20px;
+  transition: $transition-header;
+  &_background {
+    background-color: $header-bg;
+    transition-delay: 500ms;
+  }
+
   &__logo {
     margin-top: 7px;
     height: 54px;
   }
+
   &__panel {
     height: 40px;
     display: flex;
@@ -69,8 +92,10 @@ export default MainVue.extend({
     align-items: center;
     justify-content: center;
   }
+
   &__tab {
     margin-right: 20px;
+
     &:last-child {
       margin-right: 0;
     }

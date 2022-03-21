@@ -1,6 +1,6 @@
 <template>
-  <div class="layout">
-    <Header />
+  <div ref="layout" class="layout">
+    <Header :is-transparent="isHeaderTransparent" />
     <nuxt />
     <base-modal-container />
     <loader-screen />
@@ -15,6 +15,34 @@ export default MainVue.extend({
   components: {
     Header,
   },
+  data() {
+    return {
+      isHeaderTransparent: true,
+    };
+  },
+  methods: {
+    handleScroll({ target: { scrollTop } }: {target: {scrollTop: number}}):void {
+      if (scrollTop) {
+        if (this.isHeaderTransparent) {
+          this.isHeaderTransparent = false;
+        }
+      } else if (!this.isHeaderTransparent) {
+        this.isHeaderTransparent = true;
+      }
+    },
+  },
+  async mounted():Promise<void> {
+    if (process.client) {
+      const layout = await this.$refs.layout;
+      layout?.addEventListener('scroll', this.handleScroll);
+    }
+  },
+  async beforeDestroy():Promise<void> {
+    if (process.client) {
+      const layout = await this.$refs.layout;
+      layout?.removeEventListener('scroll', this.handleScroll);
+    }
+  },
 });
 </script>
 <style lang="scss" scoped>
@@ -24,5 +52,6 @@ export default MainVue.extend({
   position: relative;
   height: 100vh;
   overflow-y: auto;
+    background-color: $main-bg;
 }
 </style>

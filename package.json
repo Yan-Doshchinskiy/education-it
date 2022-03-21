@@ -8,7 +8,6 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --fix --ext .js,.vue,.ts --ignore-path .gitignore ."
-
   },
   "dependencies": {
     "axios": "^0.24.0",
@@ -30,6 +29,7 @@
     "ua-parser-js": "^1.0.1",
     "vee-validate": "^3.3.9",
     "vue": "^2.6.12",
+    "vue-carousel": "^0.18.0",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^15.9.6",
     "vuex": "^3.6.2",
