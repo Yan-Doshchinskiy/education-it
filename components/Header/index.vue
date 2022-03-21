@@ -49,12 +49,12 @@ export default MainVue.extend({
         },
         {
           id: 1,
-          link: PATH.ABOUT,
+          link: PATH.ROOT,
           label: this.$t('header.about'),
         },
         {
           id: 2,
-          link: PATH.ACCOUNT,
+          link: PATH.ROOT,
           label: this.$t('header.account'),
         },
       ],
