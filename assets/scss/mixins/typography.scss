@@ -1,0 +1,40 @@
+@mixin title {
+  font-weight: 600;
+  &_h1 {
+    color: $white;
+    font-size: 60px;
+    line-height: 60px;
+    text-transform: uppercase;
+    @include textTranslateBot;
+  }
+  &_h2 {
+    font-size: 38px;
+    line-height: 42px;
+    text-transform: uppercase;
+    @include textTranslateBot;
+  }
+  &_h3 {
+    font-size: 19px;
+    line-height: 23px;
+    font-weight: 500;
+  }
+}
+
+
+@mixin text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  &_md {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  &_sm {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  &_xs {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
