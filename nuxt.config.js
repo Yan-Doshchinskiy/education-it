@@ -6,8 +6,8 @@ import localeRu from './locales/ru.json';
 require('dotenv').config();
 
 export default {
-  ssr: false,
-  target: 'static',
+  ssr: true,
+  target: 'server',
   head: {
     title: 'Education',
     htmlAttrs: {
