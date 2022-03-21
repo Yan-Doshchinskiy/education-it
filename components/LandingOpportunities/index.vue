@@ -132,6 +132,7 @@ export default MainVue.extend({
     transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
     user-select: none;
     padding: 10px 15px;
+
     &:before, &:after {
       content: '';
       position: absolute;
@@ -139,7 +140,7 @@ export default MainVue.extend({
       top: 0;
       width: 0;
       height: 100%;
-      z-index: -1;
+      z-index: 1;
     }
     &:before {
       left: 0;
@@ -175,7 +176,7 @@ export default MainVue.extend({
     position: relative;
     text-align: center;
     color: black;
-    z-index: 1;
+    z-index: 2;
     transition-delay: .2s;
   }
   &__description {
