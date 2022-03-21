@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@nuxtjs/vercel-builder": "^0.22.1",
+    "@nuxtjs/dotenv": "^1.4.1",
     "axios": "^0.24.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
@@ -44,7 +45,6 @@
     "@nuxt/types": "^2.15.3",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/axios": "^5.13.6",
-    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config-typescript": "6.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/style-resources": "^1.0.0",
