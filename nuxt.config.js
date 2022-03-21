@@ -7,6 +7,7 @@ require('dotenv').config();
 
 export default {
   ssr: false,
+  target: 'static',
   head: {
     title: 'Education',
     htmlAttrs: {
