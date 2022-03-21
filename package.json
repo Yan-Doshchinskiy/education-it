@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start --optimize_for_size --max_old_space_size=460",
-    "generate": "nuxt generate",
+    "build": "nuxt build --max_old_space_size=8192 --optimize_for_size",
+    "start": "nuxt start --max_old_space_size=8192 --optimize_for_size",
+    "generate": "nuxt generate --max_old_space_size=8192 --optimize_for_size",
     "lint": "eslint --fix --ext .js,.vue,.ts --ignore-path .gitignore ."
   },
   "dependencies": {
@@ -14,7 +14,6 @@
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/style-resources": "^1.0.0",
-
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
     "babel-plugin-transform-runtime": "^6.23.0",
