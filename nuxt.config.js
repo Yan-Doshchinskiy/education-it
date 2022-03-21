@@ -68,4 +68,7 @@ export default {
       alwaysRedirect: true,
     },
   },
+  generate: {
+    fallback: true
+  }
 };
