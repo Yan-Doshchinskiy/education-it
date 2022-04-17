@@ -9,7 +9,7 @@
       </div>
       <button
         v-if="!options.isUnclosable"
-        class="base-modal__x icon-Close"
+        class="base-modal__x icon-cross"
         @click="CloseModal"
       />
     </div>
@@ -84,6 +84,7 @@ export default MainVue.extend({
   &__content {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
   &__buttons {
     display: grid;
@@ -92,4 +93,5 @@ export default MainVue.extend({
     grid-gap: 30px;
   }
 }
+
 </style>

@@ -12,13 +12,13 @@
 <script lang="ts">
 import { mapGetters } from 'vuex';
 import MainVue from '~/mixins/MainVue';
-import BaseModalDefault from '~/components/Modals/BaseModalDefault/index.vue';
+import ModalSale from '~/components/Modals/ModalSale/index.vue';
 import { Modals } from '~/store/modals/consts';
 
 export default MainVue.extend({
   name: 'BaseModalContainer',
   components: {
-    [Modals.DEFAULT]: BaseModalDefault,
+    [Modals.SALE]: ModalSale,
   },
   computed: {
     ...mapGetters({

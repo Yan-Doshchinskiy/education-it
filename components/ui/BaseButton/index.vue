@@ -9,6 +9,8 @@
   <button
     v-else
     :class="getButtonStyle"
+    :type="type"
+    @click="$emit('click')"
   >
     <slot />
   </button>
@@ -20,7 +22,8 @@ import { COMPUTED_STYLE } from '~/types/types';
 
 enum ButtonMode {
   LINK = 'link',
-  PRIMARY = 'primary'
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary'
 }
 
 export default MainVue.extend({
@@ -34,6 +37,10 @@ export default MainVue.extend({
       type: String,
       default: ButtonMode.PRIMARY,
     },
+    type: {
+      type: String,
+      default: 'button',
+    },
   },
   data() {
     return {
@@ -46,6 +53,7 @@ export default MainVue.extend({
         'base-button',
         { 'base-button_link': this.mode === ButtonMode.LINK },
         { 'base-button_primary': this.mode === ButtonMode.PRIMARY },
+        { 'base-button_secondary': this.mode === ButtonMode.SECONDARY },
       ];
     },
   },
@@ -74,11 +82,29 @@ export default MainVue.extend({
       background-color: $yellow-active;
     }
   }
+  &_secondary {
+    padding: 10px 27px;
+    background-color: transparent;
+    border: 1px solid;
+    border-color: $black-200;
+    color:$black-800;
+    &:hover {
+      background-color: $black-50;
+      border-color:$black-700;
+      color: $black-700;
+    }
+    &:active {
+      background-color: $black-100;
+      border-color:$black-900;
+      color:$black-900;
+    }
+  }
   &_link {
     background-color: transparent;
     color: $white;
     font-family: $header-font;
     cursor: pointer;
+    transition: $transition-header;
     &:hover {
       background-color: $yellow-main;
       color: $black;

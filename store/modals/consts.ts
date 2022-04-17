@@ -5,5 +5,5 @@ export enum ModalsMutations {
 }
 
 export enum Modals {
-  DEFAULT = 'DEFAULT',
+  SALE = 'SALE',
 }
