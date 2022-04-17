@@ -12,7 +12,6 @@ export default Vue.extend({
     ...mapActions({
       ShowModal: 'modals/showModal',
       CloseModal: 'modals/closeModal',
-      SetLoader: 'loader/setLoading',
       ShowToast: 'main/showToast',
     }),
   },

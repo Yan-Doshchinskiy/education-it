@@ -1,7 +1,7 @@
 <template>
   <div class="base-modal__box">
     <div
-      v-if="isHeader === true"
+      v-if="withHeader"
       class="base-modal__header"
     >
       <div class="base-modal__title">
@@ -13,7 +13,12 @@
         @click="CloseModal"
       />
     </div>
-    <slot />
+    <div class="base-modal__content">
+      <slot name="content" />
+    </div>
+    <div class="base-modal__buttons">
+      <slot name="buttons" />
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -30,7 +35,7 @@ export default MainVue.extend({
       type: Boolean,
       default: false,
     },
-    isHeader: {
+    withHeader: {
       type: Boolean,
       default: true,
     },
@@ -44,6 +49,47 @@ export default MainVue.extend({
 </script>
 <style lang="scss" scoped>
 .base-modal {
-  @include modalKit;
+  &__box {
+    height: max-content;
+    font-size: 16px;
+    white-space: normal;
+    word-break: break-word;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    width: 100%;
+    position: relative;
+    max-width: 500px;
+    text-align: left;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 30px;
+    row-gap: 20px;
+    align-self: center;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+  }
+  &__title {
+    font-size: 24px;
+  }
+  &__x {
+    &:before {
+      font-size: 30px;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__buttons {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+  }
 }
 </style>

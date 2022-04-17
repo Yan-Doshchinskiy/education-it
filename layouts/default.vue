@@ -2,18 +2,19 @@
   <div ref="layout" class="layout">
     <Header :is-transparent="isHeaderTransparent" />
     <nuxt />
-    <base-modal-container />
-    <loader-screen />
+    <BaseModalContainer />
   </div>
 </template>
 <script lang="ts">
 import MainVue from '~/mixins/MainVue';
 import Header from '~/components/Header/index.vue';
+import BaseModalContainer from '~/components/BaseModalContainer/index.vue';
 
 export default MainVue.extend({
   name: 'default-layout',
   components: {
     Header,
+    BaseModalContainer,
   },
   data() {
     return {
@@ -32,6 +33,7 @@ export default MainVue.extend({
     },
   },
   async mounted():Promise<void> {
+    this.ShowModal({ key: this.Modals.DEFAULT });
     if (process.client) {
       const layout = await this.$refs.layout;
       layout?.addEventListener('scroll', this.handleScroll);
