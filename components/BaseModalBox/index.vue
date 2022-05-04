@@ -1,7 +1,12 @@
 <template>
-  <div class="base-modal__box">
+  <div
+    class="base-modal__box"
+    :class="{
+      'base-modal__box_full': withoutHeader
+    }"
+  >
     <div
-      v-if="withHeader"
+      v-if="!withoutHeader"
       class="base-modal__header"
     >
       <div class="base-modal__title">
@@ -16,7 +21,12 @@
     <div class="base-modal__content">
       <slot name="content" />
     </div>
-    <div class="base-modal__buttons">
+    <div
+      class="base-modal__buttons"
+      :class="{
+        'base-modal__buttons_full': withoutHeader
+      }"
+    >
       <slot name="buttons" />
     </div>
   </div>
@@ -35,9 +45,9 @@ export default MainVue.extend({
       type: Boolean,
       default: false,
     },
-    withHeader: {
+    withoutHeader: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
   computed: {
@@ -63,9 +73,14 @@ export default MainVue.extend({
     text-align: left;
     background: #FFFFFF;
     border-radius: 20px;
+    overflow: hidden;
     padding: 30px;
     row-gap: 20px;
     align-self: center;
+    &_full {
+      padding: 0;
+      row-gap: 0;
+    }
   }
   &__header {
     display: flex;
@@ -91,6 +106,9 @@ export default MainVue.extend({
     width: 100%;
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
+    &_full {
+      padding: 20px;
+    }
   }
 }
 

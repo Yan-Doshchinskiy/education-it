@@ -90,7 +90,7 @@ export default MainVue.extend({
     color:$black-800;
     &:hover {
       background-color: $black-50;
-      border-color:$black-700;
+      //border-color:$black-700;
       color: $black-700;
     }
     &:active {

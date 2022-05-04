@@ -1,8 +1,8 @@
 <template>
-  <base-modal-box :with-header="false" :title="$t('modals.sale.title')">
+  <base-modal-box without-header :title="$t('modals.sale.title')">
     <template slot="content">
       <div class="modal-sale">
-        <img src="~/assets/img/marketing/test-sale.png" alt="sale">
+        <img class="modal-sale__image" src="~/assets/img/marketing/test-sale2.png" alt="sale">
       </div>
     </template>
     <template slot="buttons">
@@ -40,5 +40,9 @@ export default MainVue.extend({
 
 <style lang="scss">
 .modal-sale {
+  &__image {
+    width: 100%;
+    object-fit: contain;
+  }
 }
 </style>
