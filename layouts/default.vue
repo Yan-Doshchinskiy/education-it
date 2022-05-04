@@ -33,7 +33,6 @@ export default MainVue.extend({
     },
   },
   async mounted():Promise<void> {
-    this.ShowModal({ key: this.Modals.SALE });
     if (process.client) {
       const layout = await this.$refs.layout;
       layout?.addEventListener('scroll', this.handleScroll);

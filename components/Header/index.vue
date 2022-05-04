@@ -1,5 +1,5 @@
 <template>
-  <header :class="headerStyle">
+  <header id="header" :class="headerStyle">
     <img alt="logo" src="~/assets/img/logo.png" class="header__logo">
     <nav class="header__panel">
       <base-button
@@ -18,7 +18,7 @@
 <script lang="ts">
 import MainVue from '../../mixins/MainVue';
 import BaseButton from '~/components/ui/BaseButton/index.vue';
-import PATH, { COMPUTED_STYLE } from '~/types/types';
+import { COMPUTED_STYLE, LANDING_ANCHORS } from '~/types/types';
 
 export default MainVue.extend({
   name: 'header-element',
@@ -44,18 +44,18 @@ export default MainVue.extend({
       tabs: [
         {
           id: 0,
-          link: PATH.ROOT,
-          label: this.$t('header.courses'),
-        },
-        {
-          id: 1,
-          link: PATH.ROOT,
+          link: { hash: LANDING_ANCHORS.OPPORTUNITIES },
           label: this.$t('header.about'),
         },
         {
+          id: 1,
+          link: { hash: LANDING_ANCHORS.COURSES },
+          label: this.$t('header.courses'),
+        },
+        {
           id: 2,
-          link: PATH.ROOT,
-          label: this.$t('header.account'),
+          link: { hash: LANDING_ANCHORS.GRADUATES },
+          label: this.$t('header.reviews'),
         },
       ],
     };

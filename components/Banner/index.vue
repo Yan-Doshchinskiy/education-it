@@ -1,5 +1,5 @@
 <template>
-  <div class="banner">
+  <div id="landing-banner" class="banner">
     <video class="banner__video" autoplay muted loop>
       <source
         src="https://www.kernelios.com//wp-content//uploads//2020//12//VideoB.mp4"

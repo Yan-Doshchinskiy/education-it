@@ -53,6 +53,17 @@ export default {
       };
     },
   },
+  router: {
+    // eslint-disable-next-line
+    scrollBehavior(to) {
+      if (to.hash) {
+        const el = document.querySelector(to.hash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+        }
+      }
+    },
+  },
   i18n: {
     locales: ['ru'],
     defaultLocale: 'ru',
@@ -69,6 +80,6 @@ export default {
     },
   },
   generate: {
-    fallback: true
-  }
+    fallback: true,
+  },
 };

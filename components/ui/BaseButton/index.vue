@@ -30,7 +30,7 @@ export default MainVue.extend({
   name: 'base-button',
   props: {
     link: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     mode: {

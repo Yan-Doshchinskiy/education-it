@@ -8,6 +8,7 @@
   ],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": ["error"],
+    "import/prefer-default-export": ["off"],
     "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
     "space-before-function-paren": ["error"],
     "no-console": ["off"],

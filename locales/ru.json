@@ -34,7 +34,8 @@
   "header": {
     "courses": "Курсы",
     "about": "О нас",
-    "account": "Личный кабинет"
+    "account": "Личный кабинет",
+    "reviews": "Отзывы"
   },
   "landing": {
     "title": "Simulating Cyber Threats",

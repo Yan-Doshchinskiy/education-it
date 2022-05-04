@@ -1,5 +1,5 @@
 <template>
-  <div class="opportunities">
+  <div id="landing-opportunities" class="opportunities">
     <h2 class="opportunities__title">
       {{ $t("opportunities.title") }}
     </h2>
@@ -129,10 +129,10 @@ export default MainVue.extend({
 
   &__btn {
     position: relative;
-    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+    transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
     user-select: none;
     padding: 10px 15px;
-
+    border-radius: 12px;
     &:before, &:after {
       content: '';
       position: absolute;
@@ -143,19 +143,21 @@ export default MainVue.extend({
       z-index: 1;
     }
     &:before {
-      left: 0;
+      left: 6px;
       border: 1px solid $black;
       border-left: 0;
       border-right: 0;
+
     }
     &:after {
       right: 0;
+      border-radius: 6px;
     }
     &:hover {
       transition-delay: .3s;
       &:before {
         transition-delay: 0s;
-        width: 100%;
+        width: calc(100% - 12px);
       }
 
       &:after {
@@ -166,7 +168,7 @@ export default MainVue.extend({
       }
       .opportunities__text {
         color: white;
-        transition-delay: .4s;
+        transition-delay: .5s;
 
       }
     }

@@ -1,5 +1,5 @@
 <template>
-  <div class="courses">
+  <div id="landing-courses" class="courses">
     <h2 class="courses__title courses__title_h2">
       {{ $t("courses.title") }}
     </h2>
