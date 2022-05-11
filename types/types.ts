@@ -13,6 +13,13 @@ export enum LANDING_ANCHORS {
   GRADUATES = 'landing-graduates',
 }
 
+export enum BREAKPOINTS {
+  DESKTOP = 1440,
+  LAPTOP = 1280,
+  TABLET = 991,
+  MOBILE = 767
+}
+
 export type COMPUTED_STYLE = Array<string | {[key: string]: boolean}>
 
 export default PATH;

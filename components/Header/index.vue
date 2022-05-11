@@ -1,5 +1,8 @@
 <template>
   <header id="header" :class="headerStyle">
+    <div style="color:white;">
+      {{ isMobile }}
+    </div>
     <img alt="logo" src="~/assets/img/logo.png" class="header__logo">
     <nav class="header__panel">
       <base-button
@@ -19,10 +22,12 @@
 import MainVue from '../../mixins/MainVue';
 import BaseButton from '~/components/ui/BaseButton/index.vue';
 import { COMPUTED_STYLE, LANDING_ANCHORS } from '~/types/types';
+import WindowSizeTracker from '~/mixins/WindowSizeTracker';
 
 export default MainVue.extend({
   name: 'header-element',
   components: { BaseButton },
+  extends: WindowSizeTracker,
   props: {
     isTransparent: {
       type: Boolean,
