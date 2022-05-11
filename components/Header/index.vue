@@ -91,7 +91,10 @@ export default MainVue.extend({
   padding: 20px;
   transition: $transition-header;
   column-gap: 10px;
-
+  &__tab {
+    font-size: 14px;
+    line-height: 16px;
+  }
   &_background {
     background-color: $header-bg;
     transition-delay: 500ms;

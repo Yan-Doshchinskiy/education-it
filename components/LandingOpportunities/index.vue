@@ -237,10 +237,22 @@ export default MainVue.extend({
     }
   }
   @include _380 {
+    &__list {
+      row-gap: unset;
+      column-gap: unset;
+      border-radius: 12px;
+      background-color: $white;
+    }
     &__card {
       width: 100%;
       flex-direction: row;
       column-gap: 10px;
+
+      padding: 10px 15px;
+      border-radius: unset;
+      -webkit-box-shadow: unset;
+      -moz-box-shadow: unset;
+      box-shadow: unset;
     }
     &__circle {
       width: 38px;
