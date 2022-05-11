@@ -1,6 +1,6 @@
 <template>
   <div id="landing-opportunities" class="opportunities">
-    <h2 class="opportunities__title">
+    <h2 class="opportunities__title opportunities__title_h2">
       {{ $t("opportunities.title") }}
     </h2>
     <h3 class="opportunities__subtitle opportunities__subtitle_h3">
@@ -88,25 +88,26 @@ export default MainVue.extend({
 
   &__list {
     width: 100%;
-    display: grid;
-    grid-column-gap: 20px;
-    grid-row-gap: 25px;
-    grid-template-columns: repeat(auto-fit, 180px);
-    justify-content: center;
+    display: flex;
     margin-bottom: 50px;
+    column-gap: 20px;
+    row-gap: 25px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   &__card {
-    width: 100%;
+    width: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 12px;
     padding: 25px;
     transition: $transition_main;
-    -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
-    box-shadow: 4px 4px 14px 4px rgba(0, 0, 0, 0.3);
+    //-webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    //-moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    box-shadow: 2px 2px 14px 2px rgba(0, 0, 0, 0.08);
   }
 
   &__circle {
@@ -185,6 +186,22 @@ export default MainVue.extend({
     @include text;
     width: 50%;
     text-align: center;
+  }
+  @include _767 {
+    padding: 50px 20px;
+    &__title {
+      width: 100%;
+      text-align: center;
+    }
+
+    &__subtitle {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @include _480 {
+    padding: 30px 20px;
   }
 }
 

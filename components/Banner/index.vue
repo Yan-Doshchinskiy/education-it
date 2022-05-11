@@ -107,34 +107,23 @@ export default MainVue.extend({
     &__logo {
       width: 70px;
       height: 70px;
+      margin-right: unset;
     }
     &__title {
       width: 100%;
       text-align: center;
-      font-size: 42px;
-      line-height: 42px;
     }
 
     &__subtitle {
       width: 100%;
       text-align: center;
-      font-size: 12px;
-      line-height: 12px;
+      padding-left: unset;
     }
   }
   @include _480 {
     &__logo {
       width: 60px;
       height: 60px;
-    }
-    &__title {
-      font-size: 32px;
-      line-height: 32px;
-    }
-
-    &__subtitle {
-      font-size: 10px;
-      line-height: 10px;
     }
   }
 }

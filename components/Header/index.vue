@@ -98,6 +98,7 @@ export default MainVue.extend({
 
   &__logo {
     height: 54px;
+    min-width: 54px;
   }
 
   &__panel {
