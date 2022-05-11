@@ -105,6 +105,7 @@ export default MainVue.extend({
     border-radius: 12px;
     padding: 25px;
     transition: $transition_main;
+    row-gap: 25px;
     -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
     box-shadow: 2px 2px 14px 2px rgba(0, 0, 0, 0.08);
@@ -113,18 +114,21 @@ export default MainVue.extend({
   &__circle {
     width: 74px;
     height: 74px;
+    min-width: 74px;
+    min-height: 74px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background-color: black;
     transition: $transition-main;
-    margin-bottom: 25px;
   }
 
   &__img {
-    max-width: 42px;
-    max-height: 42px;
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    min-height: 42px;
     transition: $transition-main;
   }
 
@@ -189,6 +193,23 @@ export default MainVue.extend({
   }
   @include _767 {
     padding: 50px 20px;
+    &__card {
+      padding: 15px;
+      row-gap: 15px;
+      width: unset;
+    }
+    &__circle {
+      width: 54px;
+      height: 54px;
+      min-width: 54px;
+      min-height: 54px;
+    }
+    &__img {
+      width: 29px;
+      height: 29px;
+      min-width: 29px;
+      min-height: 29px;
+    }
     &__title {
       width: 100%;
       text-align: center;
@@ -202,6 +223,19 @@ export default MainVue.extend({
 
   @include _480 {
     padding: 30px 20px;
+    &__card {
+      width: unset;
+    }
+  }
+  @include _380 {
+    &__card {
+      width: 100%;
+      flex-direction: row;
+      column-gap: 10px;
+    }
+    &__btn {
+      width: 100%;
+    }
   }
 }
 
