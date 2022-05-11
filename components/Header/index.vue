@@ -1,7 +1,7 @@
 <template>
   <header id="header" :class="headerStyle">
     <nuxt-link :to="logoLink">
-      <img alt="logo" :src="logoSrc" class="header__logo">
+      <img alt="logo" src="" class="header__logo">
     </nuxt-link>
     <nav class="header__panel">
       <base-button
@@ -21,12 +21,12 @@
 import MainVue from '../../mixins/MainVue';
 import BaseButton from '~/components/ui/BaseButton/index.vue';
 import { COMPUTED_STYLE, LANDING_ANCHORS, PATH } from '~/types/types';
-import WindowSizeTracker from '~/mixins/WindowSizeTracker';
+// import WindowSizeTracker from '~/mixins/WindowSizeTracker';
 
 export default MainVue.extend({
   name: 'header-element',
   components: { BaseButton },
-  extends: WindowSizeTracker,
+  // extends: WindowSizeTracker,
   props: {
     isTransparent: {
       type: Boolean,
@@ -42,13 +42,13 @@ export default MainVue.extend({
         },
       ];
     },
-    logoSrc() {
-      const logos = {
-        BIG: require('~/assets/img/logo.png'),
-        CIRCLE: require('~/assets/img/circle-logo.png'),
-      };
-      return this.isMobile ? logos.CIRCLE : logos.BIG;
-    },
+    // logoSrc() {
+    //   const logos = {
+    //     BIG: require('~/assets/img/logo.png'),
+    //     CIRCLE: require('~/assets/img/circle-logo.png'),
+    //   };
+    //   return this.isMobile ? logos.CIRCLE : logos.BIG;
+    // },
   },
   data() {
     return {
@@ -91,6 +91,7 @@ export default MainVue.extend({
   padding: 20px;
   transition: $transition-header;
   column-gap: 10px;
+
   &_background {
     background-color: $header-bg;
     transition-delay: 500ms;
@@ -101,6 +102,10 @@ export default MainVue.extend({
     min-width: 54px;
   }
 
+  &__logo {
+    content: url('~/assets/img/logo.png');
+  }
+
   &__panel {
     display: flex;
     flex-grow: 1;
@@ -109,11 +114,18 @@ export default MainVue.extend({
     column-gap: 20px;
   }
 
-  &__tab {
+  @include _767 {
+    &__logo {
+      content: url('~/assets/img/circle-logo.png');
+    }
   }
-
   @include _480 {
     padding: 15px;
+    height: 60px;
+    &__logo {
+      height: 40px;
+      min-width: 40px;
+    }
     &__tab {
       font-size: 12px;
       line-height: 14px;
