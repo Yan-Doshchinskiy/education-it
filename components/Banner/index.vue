@@ -6,17 +6,18 @@
         type="video/mp4"
       >
     </video>
-    <div class="banner__shadow" />
-    <div class="banner__head">
-      <div class="banner__top">
-        <img class="banner__logo" alt="logo" src="~/assets/img/circle-logo.png">
-        <h1 class="banner__title banner__title_h1">
-          {{ $t('landing.title') }}
-        </h1>
+    <div class="banner__shadow">
+      <div class="banner__head">
+        <div class="banner__top">
+          <img class="banner__logo" alt="logo" src="~/assets/img/circle-logo.png">
+          <h1 class="banner__title banner__title_h1">
+            {{ $t('landing.title') }}
+          </h1>
+        </div>
+        <h3 class="banner__subtitle banner__subtitle_h3">
+          {{ $t('landing.subTitle') }}
+        </h3>
       </div>
-      <h3 class="banner__subtitle banner__subtitle_h3">
-        {{ $t('landing.subTitle') }}
-      </h3>
     </div>
   </div>
 </template>
@@ -37,6 +38,8 @@ export default MainVue.extend({
   overflow: hidden;
   &__video {
     width: 100%;
+    height: 100vh;
+    object-fit: cover;
   }
   &__shadow {
     top: 0;
@@ -52,7 +55,6 @@ export default MainVue.extend({
     left: 47.3%;
     display: flex;
     flex-direction: column;
-    z-index: 10;
   }
 
   &__top {
@@ -76,6 +78,64 @@ export default MainVue.extend({
     @include title;
     color: $yellow-main;
     padding-left: 10px;
+  }
+
+  @include _1300 {
+    &__shadow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__head {
+      position: relative;
+      top: unset;
+      left: unset;
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+  @include _767 {
+    &__head {
+      padding: 0 20px;
+    }
+    &__top {
+      width: 100%;
+      flex-direction: column;
+      row-gap: 10px;
+    }
+    &__logo {
+      width: 70px;
+      height: 70px;
+    }
+    &__title {
+      width: 100%;
+      text-align: center;
+      font-size: 42px;
+      line-height: 42px;
+    }
+
+    &__subtitle {
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+  @include _480 {
+    &__logo {
+      width: 60px;
+      height: 60px;
+    }
+    &__title {
+      font-size: 32px;
+      line-height: 32px;
+    }
+
+    &__subtitle {
+      font-size: 10px;
+      line-height: 10px;
+    }
   }
 }
 </style>
