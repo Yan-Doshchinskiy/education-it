@@ -18,7 +18,7 @@
         </button>
       </li>
     </ul>
-    <p class="opportunities__description">
+    <p class="opportunities__description opportunities__description_sm">
       {{ $t("opportunities.description") }}
     </p>
   </div>
@@ -218,6 +218,9 @@ export default MainVue.extend({
     &__subtitle {
       width: 100%;
       text-align: center;
+    }
+    &__description {
+      width: 100%;
     }
   }
 
