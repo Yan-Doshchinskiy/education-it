@@ -105,8 +105,8 @@ export default MainVue.extend({
     border-radius: 12px;
     padding: 25px;
     transition: $transition_main;
-    //-webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
-    //-moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
     box-shadow: 2px 2px 14px 2px rgba(0, 0, 0, 0.08);
   }
 
