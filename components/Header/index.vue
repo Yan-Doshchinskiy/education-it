@@ -1,9 +1,8 @@
 <template>
   <header id="header" :class="headerStyle">
-    <div style="color:white;">
-      {{ isMobile }}
-    </div>
-    <img alt="logo" src="~/assets/img/logo.png" class="header__logo">
+    <nuxt-link :to="logoLink">
+      <img alt="logo" :src="logoSrc" class="header__logo">
+    </nuxt-link>
     <nav class="header__panel">
       <base-button
         v-for="tab in tabs"
@@ -21,7 +20,7 @@
 <script lang="ts">
 import MainVue from '../../mixins/MainVue';
 import BaseButton from '~/components/ui/BaseButton/index.vue';
-import { COMPUTED_STYLE, LANDING_ANCHORS } from '~/types/types';
+import { COMPUTED_STYLE, LANDING_ANCHORS, PATH } from '~/types/types';
 import WindowSizeTracker from '~/mixins/WindowSizeTracker';
 
 export default MainVue.extend({
@@ -43,9 +42,20 @@ export default MainVue.extend({
         },
       ];
     },
+    logoSrc() {
+      const logos = {
+        BIG: require('~/assets/img/logo.png'),
+        CIRCLE: require('~/assets/img/circle-logo.png'),
+      };
+      return this.isMobile ? logos.CIRCLE : logos.BIG;
+    },
   },
   data() {
     return {
+      logoLink: {
+        path: PATH.ROOT,
+        hash: LANDING_ANCHORS.ROOT,
+      },
       tabs: [
         {
           id: 0,
@@ -78,31 +88,36 @@ export default MainVue.extend({
   top: 0;
   z-index: 20;
   height: 80px;
-  padding: 20px 40px 20px 20px;
+  padding: 20px;
   transition: $transition-header;
+  column-gap: 10px;
   &_background {
     background-color: $header-bg;
     transition-delay: 500ms;
   }
 
   &__logo {
-    margin-top: 7px;
     height: 54px;
   }
 
   &__panel {
-    height: 40px;
     display: flex;
     flex-grow: 1;
     align-items: center;
     justify-content: center;
+    column-gap: 20px;
   }
 
   &__tab {
-    margin-right: 20px;
+  }
 
-    &:last-child {
-      margin-right: 0;
+  @include _480 {
+    padding: 15px;
+    &__tab {
+      font-size: 12px;
+      line-height: 14px;
+      padding: 10px 7px;
+      height: unset;
     }
   }
 }

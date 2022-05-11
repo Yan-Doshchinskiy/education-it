@@ -7,6 +7,7 @@ export enum PATH {
 }
 
 export enum LANDING_ANCHORS {
+  ROOT = 'landing',
   BANNER = 'landing-banner',
   OPPORTUNITIES = 'landing-opportunities',
   COURSES = 'landing-courses',

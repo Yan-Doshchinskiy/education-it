@@ -1,5 +1,6 @@
 <template>
   <div class="landing">
+    <div id="landing" class="landing__anchor" />
     <banner />
     <opportunities />
     <courses />
@@ -26,5 +27,10 @@ export default MainVue.extend({
 .landing {
   height: max-content;
   position: relative;
+  &__anchor {
+    position: absolute;
+    top: 0;
+  }
 }
+
 </style>

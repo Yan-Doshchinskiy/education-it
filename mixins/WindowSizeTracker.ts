@@ -21,7 +21,7 @@ export default Vue.extend({
       return this.windowSize <= BREAKPOINTS.MOBILE;
     },
   },
-  created() {
+  mounted() {
     this.initWindowSize();
     if (process.client) {
       window.addEventListener('resize', this.initWindowSize);
