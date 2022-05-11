@@ -223,8 +223,14 @@ export default MainVue.extend({
 
   @include _480 {
     padding: 30px 20px;
-    &__card {
-      width: unset;
+    &__list {
+      row-gap: 15px;
+      column-gap: 12px;
+      margin-bottom: 25px;
+
+    }
+    &__subtitle {
+      margin-bottom: 25px;
     }
   }
   @include _380 {
@@ -233,8 +239,23 @@ export default MainVue.extend({
       flex-direction: row;
       column-gap: 10px;
     }
+    &__circle {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      min-height: 38px;
+    }
+    &__img {
+      width: 21px;
+      height: 21px;
+      min-width: 21px;
+      min-height: 21px;
+    }
     &__btn {
-      width: 100%;
+      flex-grow: 1;
+      height: 38px;
+      font-size: 10px;
+      line-height: 12px;
     }
   }
 }
