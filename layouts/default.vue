@@ -2,12 +2,14 @@
   <div ref="layout" class="layout">
     <Header :is-transparent="isHeaderTransparent" />
     <nuxt />
+    <Footer />
     <BaseModalContainer />
   </div>
 </template>
 <script lang="ts">
 import MainVue from '~/mixins/MainVue';
 import Header from '~/components/Header/index.vue';
+import Footer from '~/components/Footer/index.vue';
 import BaseModalContainer from '~/components/BaseModalContainer/index.vue';
 
 export default MainVue.extend({
@@ -15,6 +17,7 @@ export default MainVue.extend({
   components: {
     Header,
     BaseModalContainer,
+    Footer,
   },
   data() {
     return {
