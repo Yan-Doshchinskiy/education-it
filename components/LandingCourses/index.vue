@@ -33,7 +33,9 @@
               </p>
             </div>
           </div>
-          <base-button>{{ $t("courses.learn-more") }}</base-button>
+          <base-button class="card__button">
+            {{ $t("courses.learn-more") }}
+          </base-button>
         </div>
       </li>
     </Flicking>
@@ -77,38 +79,38 @@ export default MainVue.extend({
           hours: 200,
           classes: 40,
         },
-        // {
-        //   id: 3,
-        //   title: 'Blockchain разработчик',
-        //   text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
-        //   img: require('~/assets/img/courses/test_3.png'),
-        //   hours: 200,
-        //   classes: 40,
-        // },
-        // {
-        //   id: 4,
-        //   title: 'Blockchain разработчик',
-        //   text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
-        //   img: require('~/assets/img/courses/test_3.png'),
-        //   hours: 200,
-        //   classes: 40,
-        // },
-        // {
-        //   id: 5,
-        //   title: 'Blockchain разработчик',
-        //   text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
-        //   img: require('~/assets/img/courses/test_3.png'),
-        //   hours: 200,
-        //   classes: 40,
-        // },
-        // {
-        //   id: 6,
-        //   title: 'Blockchain разработчик',
-        //   text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
-        //   img: require('~/assets/img/courses/test_3.png'),
-        //   hours: 200,
-        //   classes: 40,
-        // },
+        {
+          id: 3,
+          title: 'Blockchain разработчик',
+          text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
+          img: require('~/assets/img/courses/test_3.png'),
+          hours: 200,
+          classes: 40,
+        },
+        {
+          id: 4,
+          title: 'Blockchain разработчик',
+          text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
+          img: require('~/assets/img/courses/test_3.png'),
+          hours: 200,
+          classes: 40,
+        },
+        {
+          id: 5,
+          title: 'Blockchain разработчик',
+          text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
+          img: require('~/assets/img/courses/test_3.png'),
+          hours: 200,
+          classes: 40,
+        },
+        {
+          id: 6,
+          title: 'Blockchain разработчик',
+          text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
+          img: require('~/assets/img/courses/test_3.png'),
+          hours: 200,
+          classes: 40,
+        },
       ],
       info: [
         {
@@ -142,14 +144,15 @@ export default MainVue.extend({
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 50px 50px 50px;
+  padding: 100px 0 50px 0;
   background-image: linear-gradient( rgba(30, 30, 30, 0.6), rgba(30, 30, 30, 0.6)), url("~/assets/img/courses.png");
   background-size: cover;
   background-repeat: no-repeat;
   &__title {
     @include title;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     color: #FFFFFF;
+    text-align: center;
   }
   &__empty {
     @include title;
@@ -160,12 +163,7 @@ export default MainVue.extend({
   }
   &__list {
     width: 100%;
-
-    //display: grid;
-    //grid-column-gap: 20px;
-    //grid-row-gap: 25px;
-    //grid-template-columns: repeat(auto-fit, 320px);
-    //justify-content: center;
+    padding: 0 20px;
   }
   &__card {
     border-radius: 12px;
@@ -179,6 +177,7 @@ export default MainVue.extend({
     &__top {
       width: 100%;
       position: relative;
+
     }
     &__shadow {
       position: absolute;
@@ -198,8 +197,8 @@ export default MainVue.extend({
       bottom: 15px;
       left: 15px;
       z-index: 3;
-      font-size: 29px;
-      line-height: 31px;
+      font-size: 28px;
+      line-height: 30px;
     }
     &__bottom {
       padding: 20px;
@@ -218,25 +217,59 @@ export default MainVue.extend({
     }
     &__info {
       width: 100%;
-      display: flex;
-      align-items: center;
       margin-bottom: 20px;
+      display: grid;
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
     }
     &__period {
-      display: flex;
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      grid-gap: 15px;
       align-items: center;
-      flex-grow: 1;
-      overflow: hidden;
     }
     &__icon {
-      max-width: 20px;
-      max-height: 20px;
-      margin-right: 15px;
+      max-width: 100%;
+      width: 100%;
+      max-height: 100%;
+      height: 100%;
     }
     &__value {
       @include text;
       text-overflow: ellipsis;
       white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  @include _767 {
+    padding: 50px 0;
+    &__title {
+      margin-bottom: 30px;
+    }
+    &__card {
+      width: 240px;
+    }
+    .card {
+      &__title {
+        font-size: 24px;
+        line-height: 26px;
+      }
+      &__text {
+        -webkit-line-clamp: 8;
+        margin-bottom: 15px;
+      }
+      &__info {
+        margin-bottom: 15px;
+      }
+      &__period {
+        grid-template-columns: 15px 1fr;
+      }
+      &__button {
+        font-size: 12px;
+        line-height: 14px;
+        height: 30px;
+      }
     }
   }
 }
