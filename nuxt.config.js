@@ -39,6 +39,7 @@ export default {
   ],
   plugins: [
     { src: '@plugins/injectComponents.js' },
+    { src: '@plugins/flickingSlider.js' },
   ],
   build: {
     babel: {

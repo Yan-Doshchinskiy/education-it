@@ -136,9 +136,7 @@ export default MainVue.extend({
 });
 </script>
 
-<style lang="scss">
-@import url("node_modules/@egjs/vue-flicking/dist/flicking.css");
-@import url("node_modules/@egjs/vue-flicking/dist/flicking-inline.css");
+<style lang="scss" scoped>
 .courses {
   width: 100%;
   display: flex;
