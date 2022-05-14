@@ -246,7 +246,7 @@ export default MainVue.extend({
     &__card {
       width: 100%;
       flex-direction: row;
-      column-gap: 10px;
+      column-gap: 20px;
 
       padding: 10px 15px;
       border-radius: unset;
