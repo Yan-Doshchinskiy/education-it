@@ -9,8 +9,6 @@
       :options="{
         circular: true,
         panelsPerView: 1,
-        // adaptive: true,
-        // renderOnlyVisible: true
         autoResize: true
       }"
     >
@@ -26,12 +24,12 @@
             alt="image slot"
           >
           <h3 class="graduates__name">
-            {{ card.name }}
+            {{ $t(card.name) }}
           </h3>
           <div class="graduates__description">
             <div class="graduates__underline" />
             <p class="graduates__text">
-              {{ card.text }}
+              {{ $t(card.text) }}
             </p>
             <div class="graduates__underline graduates__underline_bottom" />
           </div>
@@ -53,50 +51,50 @@ export default MainVue.extend({
       cards: [
         {
           id: 1,
-          name: this.$t('graduates.cards.graduate1.name'),
-          text: this.$t('graduates.cards.graduate1.text'),
+          name: 'graduates.cards.graduate1.name',
+          text: 'graduates.cards.graduate1.text',
           img: require('~/assets/img/graduates/graduate_1.png'),
         },
         {
           id: 2,
-          name: this.$t('graduates.cards.graduate2.name'),
-          text: this.$t('graduates.cards.graduate2.text'),
+          name: 'graduates.cards.graduate2.name',
+          text: 'graduates.cards.graduate2.text',
           img: require('~/assets/img/graduates/graduate_2.png'),
         },
         {
           id: 3,
-          name: this.$t('graduates.cards.graduate3.name'),
-          text: this.$t('graduates.cards.graduate3.text'),
+          name: 'graduates.cards.graduate3.name',
+          text: 'graduates.cards.graduate3.text',
           img: require('~/assets/img/graduates/graduate_3.png'),
         },
         {
           id: 4,
-          name: this.$t('graduates.cards.graduate4.name'),
-          text: this.$t('graduates.cards.graduate4.text'),
+          name: 'graduates.cards.graduate4.name',
+          text: 'graduates.cards.graduate4.text',
           img: require('~/assets/img/graduates/graduate_4.png'),
         },
         {
           id: 5,
-          name: this.$t('graduates.cards.graduate5.name'),
-          text: this.$t('graduates.cards.graduate5.text'),
+          name: 'graduates.cards.graduate5.name',
+          text: 'graduates.cards.graduate5.text',
           img: require('~/assets/img/graduates/graduate_5.png'),
         },
         {
           id: 6,
-          name: this.$t('graduates.cards.graduate6.name'),
-          text: this.$t('graduates.cards.graduate6.text'),
+          name: 'graduates.cards.graduate6.name',
+          text: 'graduates.cards.graduate6.text',
           img: require('~/assets/img/graduates/graduate_6.png'),
         },
         {
           id: 7,
-          name: this.$t('graduates.cards.graduate7.name'),
-          text: this.$t('graduates.cards.graduate7.text'),
+          name: 'graduates.cards.graduate7.name',
+          text: 'graduates.cards.graduate7.text',
           img: require('~/assets/img/graduates/graduate_7.png'),
         },
         {
           id: 8,
-          name: this.$t('graduates.cards.graduate8.name'),
-          text: this.$t('graduates.cards.graduate8.text'),
+          name: 'graduates.cards.graduate8.name',
+          text: 'graduates.cards.graduate8.text',
           img: require('~/assets/img/graduates/graduate_8.png'),
         },
       ],

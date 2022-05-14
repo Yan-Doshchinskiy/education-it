@@ -8,7 +8,6 @@
       class="courses__list"
       hide-before-init
       :options="{
-        // circular: true,
         defaultIndex: centralElementIndex,
         bound: true
       }"
@@ -18,18 +17,18 @@
           <div class="card__shadow" />
           <img alt="card_img" :src="card.img" class="card__img">
           <h3 class="card__title">
-            {{ card.title }}
+            {{ $t(card.title) }}
           </h3>
         </div>
         <div class="card__bottom">
           <p class="card__text card__text_sm">
-            {{ card.text }}
+            {{ $t(card.text) }}
           </p>
           <div class="card__info">
             <div v-for="period in info" :key="period.id" class="card__period">
               <img class="card__icon" :src="period.img" alt="clock">
               <p class="card__value card__value_xs">
-                {{ card[period.key] }} {{ period.unit }}
+                {{ card[period.key] }} {{ $t(period.unit) }}
               </p>
             </div>
           </div>
@@ -57,56 +56,48 @@ export default MainVue.extend({
       cards: [
         {
           id: 0,
-          title: 'Frontend разработчик',
-          text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
+          title: 'courses.cards.frontend.title',
+          text: 'courses.cards.frontend.text',
           img: require('~/assets/img/courses/test_1.png'),
           hours: 450,
           classes: 90,
         },
         {
           id: 1,
-          title: 'Backend разработчик',
-          text: 'Entry level cyber security course intended for an audience looking tontry level cyber security course intended for an audience looking tontry level cyber security course intended for an audience looking tontry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
+          title: 'courses.cards.backend.title',
+          text: 'courses.cards.backend.text',
           img: require('~/assets/img/courses/test_2.png'),
           hours: 500,
           classes: 100,
         },
         {
           id: 2,
-          title: 'Blockchain разработчик',
-          text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
+          title: 'courses.cards.blockchain.title',
+          text: 'courses.cards.blockchain.text',
           img: require('~/assets/img/courses/test_3.png'),
           hours: 200,
           classes: 40,
         },
         {
           id: 3,
-          title: 'Blockchain разработчик',
-          text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
-          img: require('~/assets/img/courses/test_3.png'),
-          hours: 200,
-          classes: 40,
+          title: 'courses.cards.frontend.title',
+          text: 'courses.cards.frontend.text',
+          img: require('~/assets/img/courses/test_1.png'),
+          hours: 450,
+          classes: 90,
         },
         {
           id: 4,
-          title: 'Blockchain разработчик',
-          text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
-          img: require('~/assets/img/courses/test_3.png'),
-          hours: 200,
-          classes: 40,
+          title: 'courses.cards.backend.title',
+          text: 'courses.cards.backend.text',
+          img: require('~/assets/img/courses/test_2.png'),
+          hours: 500,
+          classes: 100,
         },
         {
           id: 5,
-          title: 'Blockchain разработчик',
-          text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
-          img: require('~/assets/img/courses/test_3.png'),
-          hours: 200,
-          classes: 40,
-        },
-        {
-          id: 6,
-          title: 'Blockchain разработчик',
-          text: 'Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world.',
+          title: 'courses.cards.blockchain.title',
+          text: 'courses.cards.blockchain.text',
           img: require('~/assets/img/courses/test_3.png'),
           hours: 200,
           classes: 40,
@@ -115,13 +106,13 @@ export default MainVue.extend({
       info: [
         {
           id: 0,
-          unit: this.$t('courses.info.hours'),
+          unit: 'courses.info.hours',
           img: require('~/assets/img/courses/clock.svg'),
           key: 'hours',
         },
         {
           id: 1,
-          unit: this.$t('courses.info.classes'),
+          unit: 'courses.info.classes',
           img: require('~/assets/img/courses/calendar.svg'),
           key: 'classes',
         },

@@ -1,6 +1,7 @@
 <template>
   <header id="header" :class="headerStyle">
     <nuxt-link :to="logoLink">
+      <!--the logo changes via css when the screen width changes-->
       <img alt="logo" src="" class="header__logo">
     </nuxt-link>
     <nav class="header__panel">
@@ -11,7 +12,7 @@
         class="header__tab"
         mode="link"
       >
-        {{ tab.label }}
+        {{ $t(tab.label) }}
       </base-button>
     </nav>
   </header>
@@ -21,12 +22,10 @@
 import MainVue from '../../mixins/MainVue';
 import BaseButton from '~/components/ui/BaseButton/index.vue';
 import { COMPUTED_STYLE, LANDING_ANCHORS, PATH } from '~/types/types';
-// import WindowSizeTracker from '~/mixins/WindowSizeTracker';
 
 export default MainVue.extend({
   name: 'header-element',
   components: { BaseButton },
-  // extends: WindowSizeTracker,
   props: {
     isTransparent: {
       type: Boolean,
@@ -42,13 +41,6 @@ export default MainVue.extend({
         },
       ];
     },
-    // logoSrc() {
-    //   const logos = {
-    //     BIG: require('~/assets/img/logo.png'),
-    //     CIRCLE: require('~/assets/img/circle-logo.png'),
-    //   };
-    //   return this.isMobile ? logos.CIRCLE : logos.BIG;
-    // },
   },
   data() {
     return {
@@ -60,17 +52,17 @@ export default MainVue.extend({
         {
           id: 0,
           link: { hash: LANDING_ANCHORS.OPPORTUNITIES },
-          label: this.$t('header.about'),
+          label: 'header.about',
         },
         {
           id: 1,
           link: { hash: LANDING_ANCHORS.COURSES },
-          label: this.$t('header.courses'),
+          label: 'header.courses',
         },
         {
           id: 2,
           link: { hash: LANDING_ANCHORS.GRADUATES },
-          label: this.$t('header.reviews'),
+          label: 'header.reviews',
         },
       ],
     };

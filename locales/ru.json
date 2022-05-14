@@ -61,7 +61,21 @@
       "hours": "hours",
       "classes": "classes"
     },
-    "learn-more": "Learn more"
+    "learn-more": "Learn more",
+    "cards": {
+      "frontend": {
+        "title": "Frontend разработчик",
+        "text": "Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world."
+      },
+      "backend": {
+        "title": "Backend разработчик",
+        "text": "Entry level cyber security course intended for an audience looking tontry level cyber security course intended for an audience looking tontry level cyber security course intended for an audience looking tontry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world."
+      },
+      "blockchain": {
+        "title": "Blockchain разработчик",
+        "text": "Entry level cyber security course intended for an audience looking to make a career change, or alternatively for those wishing to enter the world of cyber and information security. Students in the course will be exposed to a whole range of topics and methods of defense and attack in the cyber world and practice the material with tools that simulate what happens in the real world, tools required for the ongoing work of modern cyber security person in a changing world."
+      }
+    }
   },
   "footer": {
     "text": "© 2019 Kernelios Ltd.  All rights reserved. Kernelios, the Kernelios logo, Simulating Cyber Threats, Training Today’s Leaders For Tomorrow’s Threats and combinations thereof are trademarks of Kernelios Ltd."

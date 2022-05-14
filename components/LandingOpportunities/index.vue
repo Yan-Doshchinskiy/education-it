@@ -13,7 +13,7 @@
         </div>
         <button class="opportunities__btn">
           <span class="opportunities__text opportunities__text_h3">
-            {{ card.text }}
+            {{ $t(card.text) }}
           </span>
         </button>
       </li>
@@ -34,32 +34,32 @@ export default MainVue.extend({
       cards: [
         {
           id: 0,
-          text: this.$t('opportunities.cards.option1'),
+          text: 'opportunities.cards.option1',
           img: require('~/assets/img/opportunities/test_1.svg'),
         },
         {
           id: 1,
-          text: this.$t('opportunities.cards.option2'),
+          text: 'opportunities.cards.option2',
           img: require('~/assets/img/opportunities/test_2.svg'),
         },
         {
           id: 2,
-          text: this.$t('opportunities.cards.option3'),
+          text: 'opportunities.cards.option3',
           img: require('~/assets/img/opportunities/test_3.svg'),
         },
         {
           id: 3,
-          text: this.$t('opportunities.cards.option4'),
+          text: 'opportunities.cards.option4',
           img: require('~/assets/img/opportunities/test_4.svg'),
         },
         {
           id: 4,
-          text: this.$t('opportunities.cards.option5'),
+          text: 'opportunities.cards.option5',
           img: require('~/assets/img/opportunities/test_5.svg'),
         },
         {
           id: 6,
-          text: this.$t('opportunities.cards.option6'),
+          text: 'opportunities.cards.option6',
           img: require('~/assets/img/opportunities/test_7.svg'),
         },
       ],
