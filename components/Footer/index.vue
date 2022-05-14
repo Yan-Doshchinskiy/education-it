@@ -1,7 +1,7 @@
 <template>
   <footer id="footer" class="footer">
     <p class="footer__copyright">
-      {{ $t("footer.text") }}
+      {{ $t("footer.copyright") }}
     </p>
   </footer>
 </template>
