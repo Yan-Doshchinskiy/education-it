@@ -185,6 +185,8 @@ export default MainVue.extend({
       background-color: rgba(0,0,0,0.5);
     }
     &__img {
+      min-height: 100%;
+      min-width: 100%;
       max-height: 100%;
       max-width: 100%;
     }
