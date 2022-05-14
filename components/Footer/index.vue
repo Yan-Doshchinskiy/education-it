@@ -1,7 +1,7 @@
 <template>
   <footer id="footer" class="footer">
     <p class="footer__copyright">
-      © 2019 Kernelios Ltd.  All rights reserved. Kernelios, the Kernelios logo, Simulating Cyber Threats, Training Today’s Leaders For Tomorrow’s Threats and combinations thereof are trademarks of Kernelios Ltd.
+      {{ $t("footer.text") }}
     </p>
   </footer>
 </template>
