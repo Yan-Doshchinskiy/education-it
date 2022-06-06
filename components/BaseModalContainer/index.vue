@@ -13,7 +13,7 @@
 import { mapGetters } from 'vuex';
 import MainVue from '~/mixins/MainVue';
 import ModalSale from '~/components/Modals/ModalSale/index.vue';
-import { Modals } from '~/store/modals/consts';
+import { Modals } from '~/store/modals/types';
 
 export default MainVue.extend({
   name: 'BaseModalContainer',

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { mapActions } from 'vuex';
-import { Modals } from '~/store/modals/consts';
+import { Modals } from '~/store/modals/types';
 
 export default Vue.extend({
   data() {
