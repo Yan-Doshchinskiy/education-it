@@ -1,16 +1,9 @@
-import { ActionTree, Commit } from 'vuex';
-import { IModalOptions, IModalsState } from './state';
-import { ModalsMutations } from './consts';
+import { ModalsMutations, IModalActions, Modals } from './types';
 
-export interface IModalActions<C = Commit> {
-  showModal({ commit }: { commit: C }, payload: IModalOptions): void,
-  closeModal({ commit }: { commit: C }): void,
-}
-
-const actions: ActionTree<IModalsState, IModalsState> & IModalActions = {
+const actions: IModalActions = {
   showModal({ commit }, payload) {
     commit(ModalsMutations.SET_IS_SHOW, true);
-    commit(ModalsMutations.SET_CURRENT_MODAL_KEY, payload.key);
+    commit(ModalsMutations.SET_CURRENT_MODAL_KEY, payload.key || Modals.DEFAULT);
     commit(ModalsMutations.SET_OPTIONS, payload);
   },
   closeModal({ commit }) {
