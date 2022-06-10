@@ -4,7 +4,7 @@ import localeRu from './locales/ru.json';
 
 export default {
   ssr: true,
-  target: 'server',
+  target: 'static',
   head: {
     title: 'Education',
     htmlAttrs: {
