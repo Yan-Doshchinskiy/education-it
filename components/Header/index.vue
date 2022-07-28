@@ -1,6 +1,5 @@
 <template>
   <header id="header" :class="headerStyle">
-    <span style="color: white;">{{ testValue }}, {{ $config.testValue }}</span>
     <nuxt-link :to="logoLink">
       <!--the logo changes via css when the screen width changes-->
       <img alt="logo" src="" class="header__logo">
@@ -33,9 +32,6 @@ export default MainVue.extend({
       required: true,
     },
   },
-  mounted() {
-    console.log('config', this.$config);
-  },
   computed: {
     headerStyle(): COMPUTED_STYLE {
       return [
@@ -44,9 +40,6 @@ export default MainVue.extend({
           header_background: !this.isTransparent,
         },
       ];
-    },
-    testValue():string {
-      return process.env.TEST_VALUE as string;
     },
   },
   data() {
