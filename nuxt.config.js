@@ -82,7 +82,4 @@ export default {
   generate: {
     fallback: true,
   },
-  env: {
-    TEST_VALUE: process.env.TEST_VALUE
-  }
 };
