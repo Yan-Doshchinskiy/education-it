@@ -46,6 +46,12 @@ export default MainVue.extend({
       return process.env.TEST_VALUE as string;
     },
   },
+  created() {
+    console.log('created', process.env.TEST_VALUE);
+  },
+  mounted() {
+    console.log('mounted', process.env.TEST_VALUE);
+  },
   data() {
     return {
       logoLink: {
