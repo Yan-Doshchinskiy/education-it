@@ -29,6 +29,7 @@ export default {
   },
   components: true,
   buildModules: [
+    '@nuxtjs/dotenv',
     '@nuxt/typescript-build',
     '@nuxtjs/eslint-module',
     'bootstrap-vue/nuxt',
