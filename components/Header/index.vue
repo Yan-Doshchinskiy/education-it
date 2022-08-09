@@ -1,6 +1,5 @@
 <template>
   <header id="header" :class="headerStyle">
-    {{ test }}
     <nuxt-link :to="logoLink">
       <!--the logo changes via css when the screen width changes-->
       <img alt="logo" src="" class="header__logo">
@@ -41,9 +40,6 @@ export default MainVue.extend({
           header_background: !this.isTransparent,
         },
       ];
-    },
-    test():string {
-      return process.env.TEST_VALUE as string;
     },
   },
   data() {
