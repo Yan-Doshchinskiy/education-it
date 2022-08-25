@@ -5,10 +5,12 @@
     <opportunities />
     <courses />
     <graduates />
+    {{ env }}
   </div>
 </template>
 
 <script lang="ts">
+import { NuxtRuntimeConfig } from '@nuxt/types/config/runtime';
 import MainVue from '~/mixins/MainVue';
 import Banner from '~/components/Banner/index.vue';
 import Opportunities from '~/components/LandingOpportunities/index.vue';
@@ -18,7 +20,21 @@ import Graduates from '~/components/LandingGraduates/index.vue';
 export default MainVue.extend({
   name: 'LandingPage',
   components: {
-    Banner, Opportunities, Courses, Graduates,
+    Banner,
+    Opportunities,
+    Courses,
+    Graduates,
+  },
+  asyncData({ $config }: NuxtRuntimeConfig) {
+    const { test } = $config;
+    return {
+      env: test,
+    };
+  },
+  data() {
+    return {
+      env: '',
+    };
   },
 });
 </script>
@@ -27,6 +43,7 @@ export default MainVue.extend({
 .landing {
   height: max-content;
   position: relative;
+
   &__anchor {
     position: absolute;
     top: 0;
